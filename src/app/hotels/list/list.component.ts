@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit, OnDestroy {
-  subscribes: Subscription[];
+  subscribes: Subscription[] = [];
   activities: Activity[];
   constructor(
     public mainServise: MainService
