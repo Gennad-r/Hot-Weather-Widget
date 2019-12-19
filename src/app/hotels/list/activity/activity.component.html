@@ -1,0 +1,16 @@
+<div class="activity-row">
+  <div class="activity-desc">
+    <h5>{{data.title}}</h5>
+    <p>{{data.subtitle}}</p>
+    <p>{{data.desc}}</p>
+    <h6 *ngIf="data.phone">Tel: {{data.phone}}</h6>
+  </div>
+  <div class="activity-img">
+    <ul>
+      <li *ngFor="let img of data.img">
+        <img [src]="img" />
+      </li>
+    </ul>
+  </div>
+  <div class="clear"> </div>
+</div>

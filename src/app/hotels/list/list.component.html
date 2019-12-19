@@ -1,0 +1,17 @@
+<div class="ele-strip">
+  <ul>
+    <li><a href="index.html#">Hotel</a></li>
+    <li><a href="index.html#">Fishing</a></li>
+    <li><a href="index.html#">Tours</a></li>
+    <li class="anc-bor"><a href="index.html#">Weather</a></li>
+  </ul>
+</div>
+<div class="village">
+  <h3>Righteous indignation & like</h3>
+  <span class="line"> </span>
+  <div class="activity_box">
+    <div class="scrollbar" id="style-2">
+      <app-activity *ngFor="let item of activities" [data]="item"></app-activity>
+    </div>
+  </div>
+</div>
