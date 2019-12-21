@@ -7,7 +7,7 @@ import { Activity } from 'src/app/models/activity';
   styleUrls: ['./activity.component.scss']
 })
 export class ActivityComponent implements OnInit {
-  @Input() data: Activity[];
+  @Input() data: Activity;
   constructor() { }
 
   ngOnInit() {
