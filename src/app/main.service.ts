@@ -12,10 +12,15 @@ export class MainService {
   constructor(
     private afs: AngularFirestore
     ) {
-      this.activities = this.afs.collection('activity').valueChanges();
+      this.itemsCollection = afs.collection<Activity>('activity');
+      this.activities = this.itemsCollection.valueChanges();
      }
 
      getActivities() {
        return this.activities;
      }
+
+     getCollections() {
+      return this.itemsCollection.get();
+    }
 }

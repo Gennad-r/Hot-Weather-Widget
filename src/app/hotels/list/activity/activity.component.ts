@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Activity } from 'src/app/models/activity';
 
 @Component({
@@ -8,9 +8,11 @@ import { Activity } from 'src/app/models/activity';
 })
 export class ActivityComponent implements OnInit {
   @Input() data: Activity;
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

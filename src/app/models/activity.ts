@@ -1,8 +1,24 @@
 export interface Activity {
-  id?: string;
-  title?: string;
-  subtitle?: string;
-  desc?: string;
-  phone?: string;
-  img?: string[];
+  id: string;
+  title: string;
+  address: string;
+  description: string;
+  phone: string;
+  picture: string;
+  photos: string[];
+  weather: IWeather;
+  profile: IProfile;
+  stars: number;
+}
+
+export interface IWeather {
+  temperature: number;
+  wind: number;
+  icon: string;
+}
+
+export interface IProfile {
+  followers: number;
+  following: number;
+  photo: string;
 }

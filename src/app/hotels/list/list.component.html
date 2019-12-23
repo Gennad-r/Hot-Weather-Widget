@@ -11,7 +11,11 @@
   <span class="line"> </span>
   <div class="activity_box">
     <div class="scrollbar" id="style-2">
-      <app-activity *ngFor="let item of activities" [data]="item"></app-activity>
+      <app-activity
+      *ngFor="let item of activities"
+      [data]="item"
+      (click)="onChoosedHotel(item.id)"
+      ></app-activity>
     </div>
   </div>
 </div>
