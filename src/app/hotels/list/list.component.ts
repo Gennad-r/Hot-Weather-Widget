@@ -1,5 +1,5 @@
 import { Component, Output, OnInit, OnDestroy, EventEmitter } from '@angular/core';
-import { Activity } from 'src/app/models/activity';
+import { ActivityID } from 'src/app/models/activity';
 import { MainService } from 'src/app/main.service';
 import { Subscription } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class ListComponent implements OnInit, OnDestroy {
   subscribes: Subscription[] = [];
-  activities: Activity[];
+  activities: ActivityID[];
   @Output() public choosedHotel: EventEmitter<string> = new EventEmitter();
 
   constructor(
@@ -22,15 +22,8 @@ export class ListComponent implements OnInit, OnDestroy {
     const d = this.mainServise.getActivities().subscribe(items => {
       this.activities = [...items];
     });
-    const e = this.mainServise.getCollections().subscribe(el => {
-      const idList: string[] = [];
-      el.docs.forEach(elem => idList.push(elem.id));
-      this.activities.forEach((act, i) => {
-        act.id = idList[i];
-      });
-      console.log('-------', this.activities);
-    });
-    this.subscribes.push(d, e);
+
+    this.subscribes.push(d);
   }
 
   ngOnDestroy() {

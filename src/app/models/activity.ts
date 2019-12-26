@@ -1,5 +1,4 @@
 export interface Activity {
-  id: string;
   title: string;
   address: string;
   description: string;
@@ -21,4 +20,8 @@ export interface IProfile {
   followers: number;
   following: number;
   photo: string;
+}
+
+export interface ActivityID extends Activity {
+  id: string;
 }
