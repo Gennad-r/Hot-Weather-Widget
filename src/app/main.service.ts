@@ -14,7 +14,7 @@ export class MainService {
   constructor(
     private afs: AngularFirestore
     ) {
-      this.itemsCollection = afs.collection<Activity>('activity');
+      this.itemsCollection = afs.collection<Activity>('activity', ref => ref.orderBy('title', 'asc'));
       this.activities = this.itemsCollection.snapshotChanges().pipe(
         map(acts => acts.map(el => {
           const id = el.payload.doc.id as string;
@@ -24,7 +24,11 @@ export class MainService {
         );
      }
 
-     getActivities() {
+     getActivities(): Observable<ActivityID[]> {
        return this.activities;
+     }
+
+     addActivity(el): void {
+      this.itemsCollection.add(el);
      }
 }

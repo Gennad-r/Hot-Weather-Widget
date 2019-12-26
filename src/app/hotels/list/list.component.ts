@@ -14,13 +14,14 @@ export class ListComponent implements OnInit, OnDestroy {
   @Output() public choosedHotel: EventEmitter<string> = new EventEmitter();
 
   constructor(
-    public mainServise: MainService
+    private mainServise: MainService
   ) {
   }
 
   ngOnInit() {
     const d = this.mainServise.getActivities().subscribe(items => {
       this.activities = [...items];
+      console.log('items', this.activities);
     });
 
     this.subscribes.push(d);
