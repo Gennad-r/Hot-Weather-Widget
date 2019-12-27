@@ -15,7 +15,7 @@
       class="activity-row"
       [class.active]="current === data.id"
       *ngFor="let data of activities"
-      (click)="onChoosedHotel(data.id)"
+      (click)="onChoosedHotel(data)"
       >
         <div class="activity-desc">
           <h5>{{data.title}}</h5>

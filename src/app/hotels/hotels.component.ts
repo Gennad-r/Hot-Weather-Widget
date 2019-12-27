@@ -27,8 +27,8 @@ export class HotelsComponent implements OnInit, OnDestroy {
     this.subscribes.forEach(s => s.unsubscribe);
   }
 
-  getHotelID(id) {
-    this.current = this.activities.filter(el => el.id === id)[0];
+  getHotelID(hotel) {
+    this.current = {...hotel};
   }
 
 }

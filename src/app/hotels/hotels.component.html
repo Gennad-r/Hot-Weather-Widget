@@ -1,12 +1,11 @@
-<div class="element">
+<div class="element" *ngIf="current">
   <div class="element-left">
-    <div class="element-bg-img"><img [src]="current.picture" [alt]="current.title" class="img-responsive"> </div>
+    <div class="element-bg-img"><img [src]="current?.picture" [alt]="current.title" class="img-responsive"> </div>
     <div class="element-left-bottom">
       <app-list
       [activities]="activities"
       [current]="current.id"
-      (choosedHotel)="getHotelID($event)"
-      ></app-list>
+      (choosedHotel)="getHotelID($event)"></app-list>
     </div>
   </div>
   <div class="element-right">
