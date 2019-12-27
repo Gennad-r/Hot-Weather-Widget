@@ -1,7 +1,10 @@
 <div class="temperatur">
   <h5>Et harum quidem</h5>
   <span class="w-line"> </span>
-  <span [class]="weather.icon"> </span>
+  <span
+  [ngClass]="['icon', weather.icon]"
+  > </span
+  >
   <h2>{{weather.temperature}}<sup class="degree">°</sup></h2>
   <h6>Wind {{weather.wind}} m/sec</h6>
 </div>

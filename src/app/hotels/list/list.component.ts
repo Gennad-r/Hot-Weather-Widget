@@ -8,6 +8,7 @@ import { ActivityID } from 'src/app/models/activity';
 })
 export class ListComponent {
   @Input() public activities: ActivityID;
+  @Input() public current: string;
   @Output() public choosedHotel: EventEmitter<string> = new EventEmitter();
 
   constructor() {

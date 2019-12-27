@@ -4,6 +4,7 @@
     <div class="element-left-bottom">
       <app-list
       [activities]="activities"
+      [current]="current.id"
       (choosedHotel)="getHotelID($event)"
       ></app-list>
     </div>
