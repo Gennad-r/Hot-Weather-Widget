@@ -2,15 +2,15 @@
   <div class="element-left">
     <div class="element-bg-img"><img [src]="current.picture" [alt]="current.title" class="img-responsive"> </div>
     <div class="element-left-bottom">
-      <app-list 
+      <app-list
       [activities]="activities"
       (choosedHotel)="getHotelID($event)"
       ></app-list>
     </div>
   </div>
   <div class="element-right">
-    <app-weather></app-weather>
-    <app-profile></app-profile>
+    <app-weather [weather]="current.weather"></app-weather>
+    <app-profile [profile]="current.profile"></app-profile>
   </div>
   <div class="clear"> </div>
 </div>
