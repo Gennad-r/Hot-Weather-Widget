@@ -11,11 +11,27 @@
   <span class="line"> </span>
   <div class="activity_box">
     <div class="scrollbar" id="style-2">
-      <app-activity
-      *ngFor="let item of activities"
-      [data]="item"
-      (click)="onChoosedHotel(item.id)"
-      ></app-activity>
+      <div 
+      class="activity-row" 
+      *ngFor="let data of activities"
+      (click)="onChoosedHotel(data.id)"
+      >
+        <div class="activity-desc">
+          <h5>{{data.title}}</h5>
+          <p>{{data.address}}</p>
+          <p>{{data.description}}</p>
+          <h6 *ngIf="data.phone">Tel: {{data.phone}}</h6>
+        </div>
+        <div class="activity-img">
+          <ul>
+            <li *ngFor="let img of data.photos">
+              <img [src]="img" />
+            </li>
+          </ul>
+        </div>
+        <div class="clear"> </div>
+      </div>
+
     </div>
   </div>
 </div>

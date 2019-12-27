@@ -1,8 +1,11 @@
 <div class="element">
   <div class="element-left">
-    <div class="element-bg-img"><img src="/assets/images/1.jpg" alt="" class="img-responsive"> </div>
+    <div class="element-bg-img"><img [src]="current.picture" [alt]="current.title" class="img-responsive"> </div>
     <div class="element-left-bottom">
-      <app-list></app-list>
+      <app-list 
+      [activities]="activities"
+      (choosedHotel)="getHotelID($event)"
+      ></app-list>
     </div>
   </div>
   <div class="element-right">

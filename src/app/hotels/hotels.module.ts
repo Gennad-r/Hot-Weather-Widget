@@ -4,7 +4,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { WeatherComponent } from './weather/weather.component';
 import { ListComponent } from './list/list.component';
 import { HotelsComponent } from '../hotels/hotels.component';
-import { ActivityComponent } from './list/activity/activity.component';
 
 
 
@@ -14,8 +13,7 @@ import { ActivityComponent } from './list/activity/activity.component';
     HotelsComponent,
     ProfileComponent,
     WeatherComponent,
-    ListComponent,
-    ActivityComponent
+    ListComponent
   ],
   imports: [
     CommonModule
