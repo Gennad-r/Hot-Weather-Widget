@@ -5,4 +5,13 @@
       object-fit: cover;
     }
   }
-  
+  .ele-strip {
+    ul {
+      li:last-child {
+        border-right: none;
+      }
+    }
+    a {
+      cursor: pointer;
+    }
+  }

@@ -12,6 +12,8 @@ export class HotelsComponent implements OnInit, OnDestroy {
   subscribes: Subscription[] = [];
   activities: ActivityID[];
   current: ActivityID;
+  keyword = '';
+
   constructor(private mainServise: MainService) { }
 
   ngOnInit() {
