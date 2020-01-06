@@ -17,9 +17,9 @@ export class MainService {
       this.itemsCollection = afs.collection<Activity>('activity', ref => ref.orderBy('title', 'asc'));
       this.activities = this.itemsCollection.snapshotChanges().pipe(
         map(acts => acts.map(el => {
-          const id = el.payload.doc.id as string;
-          const data = el.payload.doc.data() as Activity;
-          return {id, ...data};
+          const id: string = el.payload.doc.id as string;
+          const data: Activity = el.payload.doc.data() as Activity;
+          return {id, ...data} as ActivityID;
         }))
         );
      }
@@ -28,7 +28,7 @@ export class MainService {
        return this.activities;
      }
 
-     addActivity(el): void {
-      this.itemsCollection.add(el);
+     addActivity(el: Activity): void {
+      this.itemsCollection.add(el as Activity);
      }
 }

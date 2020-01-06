@@ -7,6 +7,7 @@ import { ActivityID } from '../models/activity';
 export class HotelfilterPipe implements PipeTransform {
 
   transform(value: ActivityID[], key: string = ''): ActivityID[] {
-    return value.filter((el) => el.title.toLocaleLowerCase().indexOf(key) !== -1);
+    return value.filter((el: ActivityID) => el.title.toLocaleLowerCase().indexOf(key) !== -1);
   }
+  
 }

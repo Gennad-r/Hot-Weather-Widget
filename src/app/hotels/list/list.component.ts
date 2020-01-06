@@ -10,14 +10,11 @@ export class ListComponent {
   @Input() public activities: ActivityID;
   @Input() public current: string;
   @Input() public keyword: string;
-  @Output() public choosedHotel: EventEmitter<string> = new EventEmitter();
+  @Output() public choosedHotel: EventEmitter<ActivityID> = new EventEmitter();
   stars: number = null;
 
-
-  constructor() {
-  }
-
-  onChoosedHotel(e) {
+  onChoosedHotel(e: ActivityID) {
     this.choosedHotel.emit(e);
   }
+
 }

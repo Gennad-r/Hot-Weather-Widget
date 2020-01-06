@@ -3,7 +3,7 @@
     <input type="text" name="text" [(ngModel)]="keyword">
   </div>
   <div class="element-left">
-    <div class="element-bg-img"><img [src]="current?.picture" [alt]="current.title" class="img-responsive"> </div>
+    <div class="element-bg-img"><img [src]="current.picture" [alt]="current.title" class="img-responsive"> </div>
     <div class="element-left-bottom">
       <app-list
       [keyword]="keyword | lowercase"

@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivityID } from '../models/activity';
 import { MainService } from '../main.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-hotels',
@@ -14,7 +15,10 @@ export class HotelsComponent implements OnInit, OnDestroy {
   current: ActivityID;
   keyword = '';
 
-  constructor(private mainServise: MainService) { }
+  constructor(private mainServise: MainService,
+              public title: Title ) {
+    title.setTitle('Hotels test title');
+  }
 
   ngOnInit() {
     const d = this.mainServise.getActivities().subscribe(items => {
@@ -23,6 +27,7 @@ export class HotelsComponent implements OnInit, OnDestroy {
     });
 
     this.subscribes.push(d);
+
   }
 
   ngOnDestroy() {

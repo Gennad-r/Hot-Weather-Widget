@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../main.service';
 import { Activity } from '../models/activity';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-manage-form',
@@ -27,7 +28,10 @@ export class ManageFormComponent implements OnInit {
     },
     stars: 1
   };
-  constructor(private mainServise: MainService) { }
+  constructor(private mainServise: MainService,
+              public title: Title) {
+                title.setTitle('Add new hotel');
+              }
 
   ngOnInit() {
   }

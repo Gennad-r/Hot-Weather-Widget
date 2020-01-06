@@ -6,9 +6,9 @@ import { ActivityID } from '../models/activity';
 })
 export class StarsPipe implements PipeTransform {
 
-  transform(value: ActivityID[], stars: number = null): any {
-    if (!stars) {return value}
-    return value.filter(el => el.stars === stars);
+  transform(value: ActivityID[], stars: number = null): ActivityID[] {
+    if (!stars) { return value as ActivityID[]; }
+    return value.filter((el: ActivityID) => el.stars === stars);
   }
 
 }
