@@ -17,11 +17,10 @@
       class="activity-row"
       [class.active]="current === data.id"
       *ngFor="let data of activities | hotelfilter:keyword | stars:stars"
-      (click)="onChoosedHotel(data)"
       >
         <div class="activity-desc">
-          <h5>{{data.title}}</h5>
-          <p>{{data.address}}</p>
+          <h5 (click)="deleteHotel(data)">{{data.title}}</h5>
+          <p (click)="onChoosedHotel(data)">{{data.address}}</p>
           <p>{{data.description}}</p>
           <h6 *ngIf="data.phone">Tel: {{data.phone}}</h6>
         </div>

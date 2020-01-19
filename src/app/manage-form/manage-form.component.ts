@@ -3,6 +3,9 @@ import { MainService } from '../main.service';
 import { Activity } from '../models/activity';
 import { Title } from '@angular/platform-browser';
 
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+
 @Component({
   selector: 'app-manage-form',
   templateUrl: './manage-form.component.html',

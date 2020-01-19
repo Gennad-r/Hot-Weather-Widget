@@ -17,6 +17,7 @@ export class MainService {
       this.itemsCollection = afs.collection<Activity>('activity', ref => ref.orderBy('title', 'asc'));
       this.activities = this.itemsCollection.snapshotChanges().pipe(
         map(acts => acts.map(el => {
+          console.log('-------------', el);
           const id: string = el.payload.doc.id as string;
           const data: Activity = el.payload.doc.data() as Activity;
           return {id, ...data} as ActivityID;
@@ -30,5 +31,9 @@ export class MainService {
 
      addActivity(el: Activity): void {
       this.itemsCollection.add(el as Activity);
+     }
+
+     removeActivity(el: ActivityID): void {
+      this.itemsCollection.doc(el.id).delete();
      }
 }

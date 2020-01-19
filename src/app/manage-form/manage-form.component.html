@@ -1,3 +1,44 @@
-<form (ngSubmit)=onSubmit()>
-    <input type="text" name="text" [(ngModel)]="item.title">
-</form>
+
+
+
+<div class="full-width">
+    <form>
+        <mat-form-field class="full">
+            <input matInput placeholder="Title" type="text" name="text" [(ngModel)]="item.title">
+        </mat-form-field>
+        <mat-form-field class="full">
+            <input matInput placeholder="Address" type="text" name="address" [(ngModel)]="item.address">
+        </mat-form-field>
+        <mat-form-field class="full">
+            <input matInput placeholder="Description" type="text" name="description" [(ngModel)]="item.description">
+        </mat-form-field>
+        <mat-form-field class="full">
+            <input matInput placeholder="Phone" type="tel" name="phone" [(ngModel)]="item.phone">
+        </mat-form-field>
+        <mat-form-field class="full">
+            <input matInput placeholder="Photo" type="text" name="picture" [(ngModel)]="item.picture">
+        </mat-form-field>
+        <h3>Photos</h3>
+        <mat-form-field class="full">
+            <input matInput placeholder="Photo 1" type="text" name="picture1" [(ngModel)]="item.photos[0]">
+        </mat-form-field>
+        <mat-form-field class="full">
+            <input matInput placeholder="Photo 2" type="text" name="picture2" [(ngModel)]="item.photos[1]">
+        </mat-form-field>
+        <h3>Weather</h3>
+        <mat-form-field class="full">
+            <input matInput placeholder="Temperature" type="text" name="temperature" [(ngModel)]="item.weather.temperature">
+        </mat-form-field>
+        <mat-form-field class="full">
+            <input matInput placeholder="Wind" type="text" name="wind" [(ngModel)]="item.weather.wind">
+        </mat-form-field>
+        <mat-form-field class="full">
+            <mat-label>Select icon</mat-label>
+  <mat-select [(ngModel)]="item.weather.icon">
+    <mat-option [value]="sun">
+        Sun
+    </mat-option>
+  </mat-select>
+        </mat-form-field>
+    </form>
+</div>

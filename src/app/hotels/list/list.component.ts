@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { ActivityID } from 'src/app/models/activity';
+import { MainService } from 'src/app/main.service';
 
 @Component({
   selector: 'app-list',
@@ -13,8 +14,15 @@ export class ListComponent {
   @Output() public choosedHotel: EventEmitter<ActivityID> = new EventEmitter();
   stars: number = null;
 
-  onChoosedHotel(e: ActivityID) {
+  constructor(private mainService: MainService) {
+  }
+
+  onChoosedHotel(e: ActivityID): void {
     this.choosedHotel.emit(e);
+  }
+
+  deleteHotel(el: ActivityID): void {
+    this.mainService.removeActivity(el);
   }
 
 }

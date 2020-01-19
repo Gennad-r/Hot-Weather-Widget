@@ -12,6 +12,11 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HotelsModule } from './hotels/hotels.module';
 import { ManageFormComponent } from './manage-form/manage-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
+
 
 @NgModule({
   declarations: [
@@ -22,11 +27,14 @@ import { ManageFormComponent } from './manage-form/manage-form.component';
   ],
   imports: [
     BrowserModule,
+    MatInputModule,
     FormsModule,
     HotelsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
