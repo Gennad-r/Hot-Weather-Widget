@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MainService } from '../main.service';
 import { Activity } from '../models/activity';
 import { Title } from '@angular/platform-browser';
-
-import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-manage-form',
@@ -31,15 +30,40 @@ export class ManageFormComponent implements OnInit {
     },
     stars: 1
   };
-  constructor(private mainServise: MainService,
-              public title: Title) {
+
+  constructor(
+                private mainServise: MainService,
+                private snack: MatSnackBar,
+                public title: Title
+              ) {
                 title.setTitle('Add new hotel');
               }
 
   ngOnInit() {
   }
 
-  onSubmit() {
-    console.log(this.item);
+  onSubmit(data: NgForm) {
+    const finalData: Activity = {
+      ...data.value,
+      photos: this.item.photos,
+      profile: this.item.profile,
+      weather: this.item.weather
+    };
+    // this.mainServise.addActivity(finalData);
+    console.log(finalData);
+    this.snack.open(`Hotel ${finalData.title} added`, '', {
+      duration: 7000
+    });
+    data.resetForm();
+  }
+
+  dud(data) {
+    const finalData: Activity = {
+      ...data.value,
+      photos: this.item.photos,
+      profile: this.item.profile,
+      weather: this.item.weather
+    };
+    console.log(finalData);
   }
 }
