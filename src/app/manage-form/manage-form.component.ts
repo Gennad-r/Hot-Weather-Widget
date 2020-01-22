@@ -49,7 +49,6 @@ export class ManageFormComponent implements OnInit {
       profile: this.item.profile,
       weather: this.item.weather
     };
-    // this.mainServise.addActivity(finalData);
     console.log(finalData);
     this.snack.open(`Hotel ${finalData.title} added`, '', {
       duration: 7000
@@ -57,13 +56,15 @@ export class ManageFormComponent implements OnInit {
     data.resetForm();
   }
 
-  dud(data) {
+  onSend(data) {
     const finalData: Activity = {
       ...data.value,
       photos: this.item.photos,
       profile: this.item.profile,
       weather: this.item.weather
     };
-    console.log(finalData);
+    delete finalData['01'];
+    this.mainServise.addActivity(finalData);
+    data.resetForm();
   }
 }

@@ -1,5 +1,5 @@
 <div class="full-width">
-  <form #newAct="ngForm" (ngSubmit)="onSubmit(newAct)">
+  <form #newAct="ngForm">
     <mat-form-field class="full">
       <input required matInput placeholder="Title" type="text" name="title" ngModel>
     </mat-form-field>
@@ -17,21 +17,21 @@
     </mat-form-field>
     <h3>Photos</h3>
     <mat-form-field class="full">
-      <input required (change)=dud(newAct) matInput placeholder="Photo 1" type="text" [(ngModel)]="item.photos[0]">
+      <input required matInput placeholder="Photo 1" type="text" name='01' [(ngModel)]="item.photos[0]">
     </mat-form-field>
     <mat-form-field class="full">
-      <input required matInput placeholder="Photo 2" type="text" [(ngModel)]="item.photos[1]">
+      <input required matInput placeholder="Photo 2" type="text" name='01' [(ngModel)]="item.photos[1]">
     </mat-form-field>
     <h3>Weather</h3>
     <mat-form-field class="full">
-      <input required matInput placeholder="Temperature" type="number" [(ngModel)]="item.weather.temperature">
+      <input required matInput placeholder="Temperature" type="number" name='01' [(ngModel)]="item.weather.temperature">
     </mat-form-field>
     <mat-form-field class="full">
-      <input required matInput placeholder="Wind" type="number" [(ngModel)]="item.weather.wind">
+      <input required matInput placeholder="Wind" type="number" name='01' [(ngModel)]="item.weather.wind">
     </mat-form-field>
     <mat-form-field class="full">
       <mat-label>Select icon</mat-label>
-      <mat-select required [(ngModel)]="item.weather.icon">
+      <mat-select required name='01' [(ngModel)]="item.weather.icon">
         <mat-option [value]="'sun'">
           Sun
         </mat-option>
@@ -39,17 +39,17 @@
     </mat-form-field>
     <h3>Profile</h3>
     <mat-form-field class="full">
-        <input required matInput placeholder="Followers" type="number" [(ngModel)]="item.profile.followers">
+        <input required matInput placeholder="Followers" type="number" name='01' [(ngModel)]="item.profile.followers">
     </mat-form-field>
     <mat-form-field class="full">
-        <input required matInput placeholder="Following" type="number" [(ngModel)]="item.profile.following">
+        <input required matInput placeholder="Following" type="number" name='01' [(ngModel)]="item.profile.following">
     </mat-form-field>
     <mat-form-field class="full">
-        <input required matInput placeholder="Photo" type="text" [(ngModel)]="item.profile.photo">
+        <input required matInput placeholder="Photo" type="text" name='01' [(ngModel)]="item.profile.photo">
     </mat-form-field>
-   
 
 
-    <button [disabled]="newAct.invalid" mat-flat-button color="accent">Accent</button>
+
+    <button (click)="onSend(newAct)" [disabled]="newAct.invalid" mat-flat-button color="accent">Accent</button>
   </form>
 </div>

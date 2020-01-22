@@ -19,7 +19,7 @@
       *ngFor="let data of activities | hotelfilter:keyword | stars:stars"
       >
         <div class="activity-desc">
-          <h5 (click)="deleteHotel(data)">{{data.title}}</h5>
+          <h5>{{data.title}}</h5>
           <p (click)="onChoosedHotel(data)">{{data.address}}</p>
           <p>{{data.description}}</p>
           <h6 *ngIf="data.phone">Tel: {{data.phone}}</h6>
@@ -32,6 +32,8 @@
           </ul>
         </div>
         <div class="clear"> </div>
+        <hr>
+        <div class="del"><a (click)="deleteHotel(data)">Delete hotel</a></div>
       </div>
 
     </div>
